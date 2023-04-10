@@ -1,0 +1,43 @@
+/* Main Div */
+.weather {
+    margin: 10px 15px;
+}
+
+/* First Section */
+.weather .first-section {
+    text-align: center;
+}
+
+    .weather .first-section .weather-description {
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+
+/* Second Section */
+.weather .second-section {
+    display: flex;
+}
+
+    /* Second Section Left Side */
+    .weather .second-section .left-side {
+        font-size: 14px;
+    }
+    .weather .second-section .left-side .date {
+        margin-bottom: 0;
+    }
+
+    .weather .second-section .left-side .location {
+        margin-top: 0;
+    }
+
+    /* Second Section Right Side */
+    .weather .second-section .right-side {
+        display: flex;
+        align-items: center;
+    }
+
+    .weather .second-section .right-side .temperature {
+        margin: 0;
+        padding: 0;
+        font-size: 48px;
+    }
