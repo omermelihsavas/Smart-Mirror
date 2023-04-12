@@ -20,7 +20,8 @@
         "id": 6,
         "order": 17,
         "prevSize": 32,
-        "name": "mist"
+        "name": "mist",
+        "code": 59648
       },
       "setIdx": 0,
       "setId": 3,
@@ -45,7 +46,8 @@
         "id": 28,
         "order": 8,
         "prevSize": 32,
-        "name": "clear-sky"
+        "name": "clear-sky",
+        "code": 59649
       },
       "setIdx": 0,
       "setId": 3,
@@ -70,7 +72,8 @@
         "id": 30,
         "order": 9,
         "prevSize": 32,
-        "name": "few-clouds"
+        "name": "few-clouds",
+        "code": 59650
       },
       "setIdx": 0,
       "setId": 3,
@@ -95,7 +98,8 @@
         "id": 32,
         "order": 10,
         "prevSize": 32,
-        "name": "scattered-clouds"
+        "name": "scattered-clouds",
+        "code": 59651
       },
       "setIdx": 0,
       "setId": 3,
@@ -121,7 +125,8 @@
         "id": 34,
         "order": 13,
         "prevSize": 32,
-        "name": "rain"
+        "name": "rain",
+        "code": 59652
       },
       "setIdx": 0,
       "setId": 3,
@@ -147,7 +152,8 @@
         "id": 35,
         "order": 12,
         "prevSize": 32,
-        "name": "shower-rain"
+        "name": "shower-rain",
+        "code": 59653
       },
       "setIdx": 0,
       "setId": 3,
@@ -173,7 +179,8 @@
         "id": 39,
         "order": 16,
         "prevSize": 32,
-        "name": "snow"
+        "name": "snow",
+        "code": 59654
       },
       "setIdx": 0,
       "setId": 3,
@@ -199,7 +206,8 @@
         "id": 41,
         "order": 11,
         "prevSize": 32,
-        "name": "broken-clouds"
+        "name": "broken-clouds",
+        "code": 59655
       },
       "setIdx": 0,
       "setId": 3,
@@ -225,11 +233,39 @@
         "id": 42,
         "order": 15,
         "prevSize": 32,
-        "name": "thunderstorm"
+        "name": "thunderstorm",
+        "code": 59656
       },
       "setIdx": 0,
       "setId": 3,
       "iconIdx": 41
+    },
+    {
+      "icon": {
+        "paths": [
+          "M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 516c-108.248 0-196-87.752-196-196s87.752-196 196-196 196 87.752 196 196-87.752 196-196 196zM388 320c0-68.483 55.517-124 124-124s124 55.517 124 124c0 68.483-55.517 124-124 124s-124-55.517-124-124z"
+        ],
+        "tags": [
+          "location",
+          "map-marker",
+          "pin"
+        ],
+        "defaultCode": 59720,
+        "grid": 16,
+        "attrs": []
+      },
+      "attrs": [],
+      "properties": {
+        "ligatures": "location2, map-marker2",
+        "name": "location",
+        "order": 18,
+        "id": 73,
+        "prevSize": 32,
+        "code": 59720
+      },
+      "setIdx": 2,
+      "setId": 1,
+      "iconIdx": 72
     }
   ],
   "height": 1024,
@@ -257,7 +293,11 @@
       "color": 0,
       "bgColor": 16777215,
       "classSelector": ".icon",
-      "name": "icomoon"
+      "name": "icomoon",
+      "height": 32,
+      "overrideSize": true,
+      "columns": 16,
+      "margin": 16
     },
     "historySize": 50,
     "showCodes": true,

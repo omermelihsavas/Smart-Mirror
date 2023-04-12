@@ -1,46 +1,49 @@
 import './App.css';
 import { usePosition } from 'use-position';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 import Weather from './components/weather-comp/Weather';
 
 function App() {
   const { latitude, longitude } = usePosition();
   const [weatherData, setWeatherData] = useState();
+  const [forecastData, setForecastData] = useState();
+
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+  const BASE_URL = 'https://api.openweathermap.org/data/2.5/';
 
   const GetWeatherData = async (lat, lon) => {
-    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-    const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather?'
     try {
-      const { data } = await axios.get(`${BASE_URL}lat=${lat}&lon=${lon}&lang=tr&appid=${API_KEY}&units=metric`);
+      const response = await fetch(`${BASE_URL}weather?lat=${lat}&lon=${lon}&lang=tr&appid=${API_KEY}&units=metric`);
+      const data = await response.json();
       setWeatherData(data);
     } catch {
-      alert("Veriler çekilemedi");
+      console.log('Veriler alınırken hata oluştu.');
     }
   }
 
-  // const GetWeatherData = async (lat, lon) => {
-  //   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-  //   const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather?'
-  //   try {
-  //     const response = await fetch(`${BASE_URL}lat=${lat}&lon=${lon}&lang=tr&appid=${API_KEY}&units=metric`);
-  //     const data = await response.json();
-  //     console.log(data)
-  //     setWeatherData(data);
-  //   } catch {
-  //     console.log('olmadı')
-  //   }
-  // }
-
   useEffect(() => {
     latitude && longitude && GetWeatherData(latitude, longitude);
-  }, [latitude, longitude])
+  }, [latitude, longitude]);
+
+  const GetForecastData = async (lat, lon) => {
+    try {
+      const response = await fetch(`${BASE_URL}forecast?lat=${lat}&lon=${lon}&lang=tr&appid=${API_KEY}&units=metric`);
+      const data = await response.json();
+      setForecastData(data);
+    } catch {
+      console.log('Veriler alınırken hata oluştu.');
+    }
+  }
+
+  useEffect(() => {
+    latitude && longitude && GetForecastData(latitude, longitude);
+  }, [latitude, longitude]);
 
   return (
     <div className="App">
       <div className="left-side">
-        <Weather data={weatherData}/>
+        <Weather data={weatherData}  forecastData={forecastData} />
       </div>
     </div>
   );

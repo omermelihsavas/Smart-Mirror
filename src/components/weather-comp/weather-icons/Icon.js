@@ -2,7 +2,7 @@ import IcomoonReact from "icomoon-react";
 import iconSet from "./selection.json";
 
 const Icon = (props) => {
-    const { color="#fff" , size = "64", icon, className = "" } = props;
+    const { color="" , size = "", icon, className = "" } = props;
     return (
         <IcomoonReact
             className={className}
