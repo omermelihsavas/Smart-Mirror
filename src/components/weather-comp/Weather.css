@@ -44,6 +44,7 @@
         .weather .second-section .right-side {
             display: flex;
             align-items: center;
+            justify-content: flex-end;
         }
 
             .weather .second-section .right-side .temperature {

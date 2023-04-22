@@ -1,0 +1,157 @@
+/* Main Div */
+.clock {
+    margin: 20px 15px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock label {
+    position: absolute;
+    inset: 5px;
+    text-align: center;
+}
+
+.clock label span {
+    display: inline-block;
+    font-size: 15px;
+}
+
+/* Clock Numbers */
+.number-one {
+    transform: rotate(30deg);
+}
+
+.one {
+    transform: rotate(-30deg);
+}
+
+.number-two {
+    transform: rotate(60deg);
+}
+
+.two {
+    transform: rotate(-60deg);
+}
+
+.number-three {
+    transform: rotate(90deg);
+}
+
+.three {
+    transform: rotate(-90deg);
+}
+
+.number-three {
+    transform: rotate(90deg);
+}
+
+.three {
+    transform: rotate(-90deg);
+}
+
+.number-four {
+    transform: rotate(120deg);
+}
+
+.four {
+    transform: rotate(-120deg);
+}
+
+.number-five {
+    transform: rotate(150deg);
+}
+
+.five {
+    transform: rotate(-150deg);
+}
+
+.number-six {
+    transform: rotate(180deg);
+}
+
+.six {
+    transform: rotate(-180deg);
+}
+
+.number-seven {
+    transform: rotate(210deg);
+}
+
+.seven {
+    transform: rotate(-210deg);
+}
+
+.number-eight {
+    transform: rotate(240deg);
+}
+
+.eight {
+    transform: rotate(-240deg);
+}
+
+.number-nine {
+    transform: rotate(270deg);
+}
+
+.nine {
+    transform: rotate(-270deg);
+}
+
+.number-ten {
+    transform: rotate(300deg);
+}
+
+.ten {
+    transform: rotate(-300deg);
+}
+
+.number-eleven {
+    transform: rotate(330deg);
+}
+
+.eleven {
+    transform: rotate(-330deg);
+}
+
+/* Indicator */
+.clock .indicator {
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.clock .indicator .hand {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+    background-color: #fff;
+}
+
+.clock .indicator .second {
+    height: 48px;
+    width: 1px;
+    border-radius: 20px 20px 0 0;
+}
+
+.clock .indicator .minute {
+    height: 38px;
+    width: 2px;
+    border-radius: 10px 10px 0 0;
+}
+
+.clock .indicator .hour {
+    height: 30px;
+    width: 3px;
+    border-radius: 5px 5px 0 0;
+}

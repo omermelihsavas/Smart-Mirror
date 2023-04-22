@@ -3,6 +3,7 @@ import { usePosition } from 'use-position';
 import { useEffect, useState } from 'react';
 
 import Weather from './components/weather-comp/Weather';
+import Clock from './components/clock-comp/Clock';
 
 function App() {
   const { latitude, longitude } = usePosition();
@@ -44,6 +45,14 @@ function App() {
     <div className="App">
       <div className="left-side">
         <Weather data={weatherData}  forecastData={forecastData} />
+      </div>
+
+      <div className="mid-side">
+
+      </div>
+
+      <div className="right-side">
+        <Clock />
       </div>
     </div>
   );
