@@ -1,8 +1,16 @@
 import React from 'react'
 import './Clock.css'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 function Clock() {
+  const date = new Date();
+  
+  const [time, setTime] = useState();
+    setInterval(() => {
+        const date = new Date();
+        setTime(date.toLocaleTimeString());
+    }, 1000);
+
   useEffect(() => {
     const interval = setInterval(() => {
       const date = new Date();
@@ -20,6 +28,7 @@ function Clock() {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
   return (
     <div className='clock' >
       <label className='number-one'><span className='one'>1</span></label>
@@ -39,6 +48,14 @@ function Clock() {
         <span id='clockHour' className="hand hour"></span>
         <span id='clockMinute' className="hand minute"></span>
         <span id='clockSecond' className="hand second"></span>
+      </div>
+
+      <div className="date">
+        {date.getDate()}
+      </div>
+
+      <div className="digital-clock">
+        {time}
       </div>
     </div>
   )

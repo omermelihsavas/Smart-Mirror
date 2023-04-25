@@ -47,9 +47,7 @@ function App() {
         <Weather data={weatherData}  forecastData={forecastData} />
       </div>
 
-      <div className="mid-side">
-
-      </div>
+      <div className="mid-side"></div>
 
       <div className="right-side">
         <Clock />
