@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import Weather from './components/weather-comp/Weather';
 import Clock from './components/clock-comp/Clock';
+import News from './components/news-comp/News';
 
 function App() {
   const { latitude, longitude } = usePosition();
@@ -44,7 +45,8 @@ function App() {
   return (
     <div className="App">
       <div className="left-side">
-        <Weather data={weatherData}  forecastData={forecastData} />
+        <Weather data={weatherData} forecastData={forecastData} />
+        <News />
       </div>
 
       <div className="mid-side"></div>

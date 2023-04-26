@@ -1,0 +1,17 @@
+.container {
+    margin: 40px 15px 10px 15px ;
+    text-align: center;
+}
+
+.title {
+    font-weight: 700;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.horizontal-rule {
+    margin: 5px 0;
+    border: 1px solid #c5c5c5;
+}
