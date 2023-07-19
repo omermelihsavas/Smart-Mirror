@@ -1,0 +1,23 @@
+.calender-header {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.calender-event {
+    padding: 0;
+    list-style-type: none;
+}
+
+.event h4 {
+    margin: 10px 0;
+}
+
+.event p {
+    margin: 4px 0;
+    font-weight: bold;
+}
+
+.event hr {
+    margin: 10px 0 5px 0;
+    border: 1px solid #c5c5c5;
+}

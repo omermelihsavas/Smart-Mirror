@@ -1,0 +1,25 @@
+html {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+}
+
+.App {
+  display: flex;
+}
+
+.left-side {
+  width: 25vw;
+}
+
+.mid-side {
+  width: 50vw;
+}
+
+.right-side {
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+}

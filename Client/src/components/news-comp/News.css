@@ -1,0 +1,23 @@
+.container {
+    margin: 20px 15px 10px 15px ;
+    text-align: center;
+}
+
+.news-header {
+    margin: 0 0 5px 0;
+}
+
+/* .title {
+    font-weight: 700;
+} */
+
+.description {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* .horizontal-rule {
+    margin: 5px 0;
+    border: 1px solid #c5c5c5;
+} */

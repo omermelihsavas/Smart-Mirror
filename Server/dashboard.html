@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            border: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            --head-from-color: #35d399;
+            --head-to-color: #fbe048;
+            --body-color: #1b2728;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: radial-gradient(var(--body-color), #000 70%);
+        }
+
+        h1 {
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 100px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 50px;
+            background-image: linear-gradient(to right, var(--head-from-color), var(--head-to-color));
+        }
+
+        .container {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: rgba(255, 255, 255, .05);
+            border-radius: 40px;
+            backdrop-filter: blur(5px);
+            padding: 35px 40px;
+            transition: 230ms all;
+
+            &:hover {
+                transform: scale(1.04);
+            }
+
+            & h6 {
+                color: #fff;
+                font-size: 28px;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+
+            & input {
+                color: #fff;
+                margin: 30px 0;
+            }
+
+            & input[type=file]::file-selector-button {
+                margin-right: 20px;
+                border: none;
+                background: #fff;
+                padding: 10px 20px;
+                border-radius: 10px;
+                color: #171b1c;
+                cursor: pointer;
+                transition: background .2s ease-in-out;
+            }
+
+            & button {
+                height: 40px;
+                background: #fff;
+                padding: 0 25px;
+                font-size: 16px;
+                border-radius: 20px;
+                margin-top: 10px;
+                transition: 230ms all;
+                cursor: pointer;
+            }
+            &:hover {
+                background: rgba(255, 255, 255, .1);
+                & button {
+                    color: #fff;
+                    background: var(--head-from-color);
+                }
+            }
+        }
+
+        .container:has(.col:hover) .col:not(:hover) button {
+            background: rgba(255, 255, 255, .05);
+            color: #fff;
+        }
+
+        body:has(.container:hover) {
+            --head-from-color: #4D80EE;
+            --head-to-color: #C2D8FA;
+            --body-color: #1b2028;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Smart Mirror <br>
+        Dashboard
+    </h1>
+
+    <div class="container">
+        <h6>Fotoğraf Yükle</h6>
+        <input type="file" id="imageInput" accept="image/*" />
+        <button id="uploadButton">Yükle</button>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const imageInput = document.getElementById('imageInput');
+          const uploadButton = document.getElementById('uploadButton');
+    
+          uploadButton.addEventListener('click', function() {
+            const file = imageInput.files[0];
+            const formData = new FormData();
+            formData.append('image', file);
+    
+            fetch('/api/upload-image', {
+              method: 'POST',
+              body: formData,
+            })
+            .then(response => {
+              if (response.ok) {
+                console.log('Dosya başarıyla yüklendi.');
+              } else {
+                console.error('Dosya yükleme hatası:', response.statusText);
+              }
+            })
+            .catch(error => {
+              console.error('Dosya yükleme hatası:', error);
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>
